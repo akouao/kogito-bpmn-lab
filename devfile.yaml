@@ -3,7 +3,7 @@ metadata:
 projects:
   - name: kogito-bpmn-lab
     source:
-      location: 'https://https://github.com/akouao/kogito-bpmn-lab.git'
+      location: 'https://github.com/akouao/kogito-bpmn-lab.git'
       type: git
 components:
   - id: redhat/quarkus-java11/latest
