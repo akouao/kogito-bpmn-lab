@@ -41,7 +41,7 @@ commands:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
         command: >-
-          mvn package -DuberJar=true -DskipTests -f
+          mvn package -DuberJar=true -DskipTests=true -f
           ${CHE_PROJECTS_ROOT}/kogito-bpmn-lab/getting-started
         component: quarkus-tools
   - name: Build Native App
