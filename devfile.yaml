@@ -27,12 +27,6 @@ components:
         name: MAVEN_OPTS
 apiVersion: 1.0.0
 commands:
-  - name: Run Tests
-    actions:
-      - workdir: '${CHE_PROJECTS_ROOT}'
-        type: exec
-        command: 'mvn verify -f ${CHE_PROJECTS_ROOT}/kogito-bpmn-lab/getting-started'
-        component: quarkus-tools
   - name: Start Live Coding
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
@@ -57,19 +51,3 @@ commands:
           mvn package -Pnative -DskipTests -f
           ${CHE_PROJECTS_ROOT}/kogito-bpmn-lab/getting-started
         component: quarkus-tools
-  - name: Start Debugger on 5005
-    actions:
-      - referenceContent: |
-          {
-            "version": "0.2.0",
-            "configurations": [
-              {
-                "type": "java",
-                "request": "attach",
-                "name": "Attach to App",
-                "hostName": "localhost",
-                "port": 5005
-              }
-            ]
-          }
-        type: vscode-launch
