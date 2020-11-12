@@ -1,3 +1,4 @@
+apiVersion: 1.0.0
 metadata:
   name: kogito-bpmn
 projects:
@@ -10,9 +11,10 @@ components:
     type: chePlugin
   - mountSources: true
     endpoints:
-      - name: Swagger-UI
+      - attributes:
+          path: /swagger-ui
+        name: swagger-ui
         port: 8080
-        path: /swagger-ui
     memoryLimit: 4Gi
     type: dockerimage
     alias: quarkus-tools
@@ -25,7 +27,6 @@ components:
           -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
           -XX:+CMSClassUnloadingEnabled
         name: MAVEN_OPTS
-apiVersion: 1.0.0
 commands:
   - name: Start Live Coding
     actions:
